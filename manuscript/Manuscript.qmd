@@ -3,7 +3,7 @@ title: "New paper template"
 subtitle: |
   \raggedright  Author 1^1,2,\*^ , Author 2^1,2^, Author 3^3^, Author 4E^4^ \newline<br>^1^Heidelberg University, Centre for Organismal Studies (COS), 69120 Heidelberg, Germany \newline<br>^2^Affiliation 2 \newline<br>^3^Affiliation 3 \newline<br>^4^Affiliation 4\newline<br>  ^\*^Correspondence: xy@cos.uni-heidelberg.de
 mainfont: Arial
-monofont: DejaVu Sans Mono #Times New Roman
+monofont: Helvetica #Times New Roman
 fontsize: 11pt
 linestretch: 1.2
 linkcolor: blue
@@ -21,8 +21,8 @@ format:
     margin-right: 0.8in
     margin-top: 0.8in
     margin-bottom: 0.8in
-    toc: true
-    keep-tex: true
+    toc: true # table of contents
+    keep-tex: true # true: tex file is kept, false tex file is not kept (only for PDF)
     include-in-header:
       text: |
         \usepackage{lineno}
@@ -50,7 +50,7 @@ You can add references either by referring to their id in the .bib file e.g., [@
 
 It is now a test to edit the text and see how the changes show up on GitHub.
 
-Test of git show.
+Test of git **show**. [@burkhardt2023] <!--# citation is wrong -->
 
 In the visual editor mode, go to 'Insert' -\> \@ Citation
 
@@ -87,7 +87,7 @@ You can add your figures into the rendered document. We saved the figures into /
 print("hi")
 ```
 
-```{r, out.width = "100%", fig.cap="**Figure 1. A figure** (A) A nice picture. (B) legend.  (C) <br> (D) " }
+```{r, out.width = "80%", fig.cap="**Figure 1. A figure** (A) A nice larva. (B) legend.  (C) <br> (D) " }
 #| echo: false 
 
 knitr::include_graphics("figures/Figure1.png")
@@ -105,9 +105,7 @@ Equations can also be inserted, Insert -\> Display Math:
 
 $$
 \bar{X} = \frac{\sum_{i=1}^{n} x_{i}}{n}
-$$
-
-\
+$$\
 
 ## Sourcing code and working with variable
 
@@ -130,6 +128,14 @@ We would like to thank the Jekely lab for the R project template (<https://githu
 You can insert tables from source data, such as .csv or Excel files and render them in html with the tinytable package.
 
 Alternatively, you can use the Markdown grid table format. For more complex tables, you can use the [tablesgenerator](https://www.tablesgenerator.com/markdown_tables) online grid table editor/converter (e.g. converts csv or excel files).
+
+| Col1  | Col2    | Col3  |
+|-------|---------|-------|
+| guppi | anemone | coral |
+| nemo  | fish    | snail |
+|       |         |       |
+
+: test
 
 The output may differ between html and pdf, for most consistent results use the grid table format described [here](https://quarto.org/docs/authoring/tables.html).
 
